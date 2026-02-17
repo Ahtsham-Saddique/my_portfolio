@@ -1,15 +1,132 @@
-.container{
-  background: linear-gradient(to right, #6a11cb, #2575fc);
-  color: white;
-  min-height: 60vh;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+
+.navbar-brand {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.nav-link:hover {
+  color: #0d6efd !important;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px) brightness(0.4);
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../images/hero-bg.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+/* Text above everything */
+.hero .container {
+  position: relative;
+  z-index: 3;
+}
+
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-top: 15px;
+  opacity: 0.9;
+}
+
 
 .btn {
   border-radius: 30px;
-  padding: 10px 25px;
-  font-weight: bold;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  transform: translateY(-2px);
+}
+
+
+#con-btn {
+  margin-top: 30px;
+}
+
+
+#nextBtn {
+  background-color: #0d6efd;
+  border: none;
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+}
+
+#nextBtn:hover {
+  background-color: #0b5ed7;
+}
+
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  #nextBtn {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
 }
